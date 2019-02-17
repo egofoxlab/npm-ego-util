@@ -1,0 +1,23 @@
+{
+    "name": "ego-util",
+    "version": "1.0.0",
+    "description": "JavaScript Utils",
+    "keywords": [
+        "utils",
+        "javascript"
+    ],
+    "main": "utils.js",
+    "scripts": {
+        "test": "echo \"Open test.html\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/egofoxlab/npm-ego-util.git"
+    },
+    "author": {
+        "name": "EGOFOXLAB",
+        "email": "egofoxlab@gmail.com",
+        "url": "http://egofoxlab.com"
+    },
+    "license": "ISC"
+}
