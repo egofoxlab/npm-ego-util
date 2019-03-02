@@ -142,4 +142,13 @@ declare class EgoUtil {
 	 */
 	public static str_pad(input: string, pad_length: number, pad_string?: string, pad_type?: string): string;
 
+	/**
+	 * Retrieve item from array by path
+	 *
+	 * @param obj - Input object
+	 * @param path - Path for search.
+	 * @param _default - Default value.
+	 */
+	public static getArrItem(obj: any, path: string, _default?: any): any;
+
 }

@@ -432,6 +432,42 @@ EgoUtil.str_pad = function (input, pad_length, pad_string, pad_type) {
 	return input;
 };
 
+/**
+ * Retrieve item from array by path
+ *
+ * @param obj - Input object
+ * @param path - Path for search.
+ * @param _default - Default value.
+ * @returns {*}
+ */
+EgoUtil.getArrItem = function (obj, path, _default) {
+	if (!_default) {
+		_default = null;
+	}
+
+	if (path.split('.').length > 1) {
+		var tmp = obj;
+
+		path.split('.').some(function (item) {
+			if (tmp[item] === undefined) {
+				tmp = _default;
+
+				return true;
+			} else {
+				tmp = tmp[item];
+			}
+		});
+
+		return tmp;
+	} else {
+		if (obj[path] === undefined) {
+			return _default;
+		} else {
+			return obj[path];
+		}
+	}
+};
+
 /*String.prototype.trunc = function (n, useWordBoundary) {
 	if (this.length <= n) {
 		return this;
