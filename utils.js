@@ -83,7 +83,7 @@ EgoUtil.checkEmptyForm = function (data) {
 
 		var item = data[key];
 
-		if (empty(item.value) && item !== 0) {
+		if (EgoUtil.empty(item.value) && item !== 0) {
 			return false;
 		}
 	}
@@ -110,7 +110,7 @@ EgoUtil.checkEmptyForm = function (data) {
 EgoUtil.collectFormData = function (selector, container) {
 	var $ = jQuery;
 
-	if (empty(container)) {
+	if (EgoUtil.empty(container)) {
 		container = $('body');
 	} else {
 		container = $(container);
@@ -127,7 +127,7 @@ EgoUtil.collectFormData = function (selector, container) {
 			disabled = node.prop('disabled'),
 			description = eLabel.text();
 
-		if (empty(eLabel.get(0)) && !empty(node.attr('data-description'))) {
+		if (EgoUtil.empty(eLabel.get(0)) && !EgoUtil.empty(node.attr('data-description'))) {
 			description = node.attr('data-description');
 		}
 
@@ -163,7 +163,7 @@ EgoUtil.collectFormData = function (selector, container) {
 				break;
 		}
 
-		if (empty(value)) {
+		if (EgoUtil.empty(value)) {
 			var defaultValue = node.attr('data-default-value');
 
 			if (typeof defaultValue !== 'undefined') {
@@ -171,7 +171,7 @@ EgoUtil.collectFormData = function (selector, container) {
 			}
 		}
 
-		if (!empty(name)) {
+		if (!EgoUtil.empty(name)) {
 			var required = node.data('required') === true;
 
 			if (node.attr('required') === 'required') {
@@ -205,7 +205,7 @@ EgoUtil.isRequiredFieldsEmpty = function (formData) {
 
 		var field = formData[key];
 
-		if (field.required && (empty(field.value) && field.value !== 0)) {
+		if (field.required && (EgoUtil.empty(field.value) && field.value !== 0)) {
 			return true;
 		}
 	}
@@ -261,7 +261,7 @@ EgoUtil.empty = function (mixed_var) {
  * @returns {string | null}
  */
 EgoUtil.getUrlParam = function (param, url) {
-	url = empty(url) ? window.location.href : url;
+	url = EgoUtil.empty(url) ? window.location.href : url;
 
 	return (new URL(url)).searchParams.get(param);
 };
@@ -296,7 +296,7 @@ EgoUtil.setFieldValue = function (eField, value) {
 	var tagName = eField.prop('tagName'),
 		name = eField.first().attr('name');
 
-	if (empty(tagName)) {
+	if (EgoUtil.empty(tagName)) {
 		return;
 	}
 
