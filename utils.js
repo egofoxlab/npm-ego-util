@@ -165,7 +165,6 @@
 					if (node.prop('multiple')) {
 
 					} else {
-						console.log(node.get(0));
 						value = [node.val()];
 					}
 
@@ -255,7 +254,6 @@
 				result = false;
 			}
 		} catch (e) {
-			console.log(e);
 			result = true;
 		}
 
