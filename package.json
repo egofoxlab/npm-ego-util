@@ -1,12 +1,15 @@
 {
-    "name": "ego-util",
-    "version": "1.0.4",
+    "name": "@egofoxlab/util",
+    "version": "1.0.2",
     "description": "JavaScript Utils",
     "keywords": [
         "utils",
-        "javascript"
+        "util",
+        "javascript",
+        "js",
+        "ego"
     ],
-    "main": "utils.js",
+    "main": "./utils.js",
     "scripts": {
         "test": "echo \"Open test.html\""
     },
@@ -19,5 +22,10 @@
         "email": "egofoxlab@gmail.com",
         "url": "http://egofoxlab.com"
     },
-    "license": "ISC"
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/egofoxlab/npm-ego-util/issues"
+    },
+    "homepage": "https://github.com/egofoxlab/npm-ego-util#readme",
+    "types": "./utils.d.ts"
 }

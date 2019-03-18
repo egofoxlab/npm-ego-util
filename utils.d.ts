@@ -4,7 +4,7 @@
  * Copyright (c) 2019.
  */
 
-declare class EgoUtil {
+declare namespace EgoUtil {
 
 	/**
 	 * Send request
@@ -19,7 +19,7 @@ declare class EgoUtil {
 	 * @param {Function} [params.notSuccess=null] params.notSuccess callback for not success event
 	 * @param {Function} [params.error=null] params.error callback for error event
 	 */
-	public static _request(params: {
+	export function _request(params: {
 		url: string,
 		method?: string,
 		data?: any,
@@ -36,14 +36,14 @@ declare class EgoUtil {
 	 * @param {Object} data
 	 * @return {Boolean}
 	 */
-	public static checkEmptyForm(data: any): boolean;
+	export function checkEmptyForm(data: any): boolean;
 
 	/**
 	 * Collect data from form
 	 *
 	 * Return array in format
 	 * [
-	 * 		FIELD_NAME_ATTR: {
+	 *        FIELD_NAME_ATTR: {
 	 * 				value: FIELD_VALUE,
 	 * 				required: IF_FIELD_REQUIRED,
 	 *	 			description: FIELD_LABEL//	Field label or `data-description` field attribute
@@ -54,7 +54,7 @@ declare class EgoUtil {
 	 * @param {Object} container
 	 * @return {Object}
 	 */
-	public static collectFormData(selector: string, container: any): any;
+	export function collectFormData(selector: string, container: any): any;
 
 	/**
 	 * Is the required fields is Empty?
@@ -63,7 +63,7 @@ declare class EgoUtil {
 	 * @param {object} formData
 	 * @returns {boolean}
 	 */
-	public static isRequiredFieldsEmpty(formData: any): boolean;
+	export function isRequiredFieldsEmpty(formData: any): boolean;
 
 	/**
 	 * Check that object is array
@@ -71,7 +71,7 @@ declare class EgoUtil {
 	 * @param {any} mixed_var
 	 * @returns {boolean}
 	 */
-	public static is_array(mixed_var: any): boolean;
+	export function is_array(mixed_var: any): boolean;
 
 	/**
 	 * Check empty value
@@ -79,7 +79,7 @@ declare class EgoUtil {
 	 * @param {any} mixed_var
 	 * @returns {boolean}
 	 */
-	public static empty(mixed_var: any): boolean;
+	export function empty(mixed_var: any): boolean;
 
 	/**
 	 * Return URL parameter
@@ -88,14 +88,14 @@ declare class EgoUtil {
 	 * @param {String} [url]
 	 * @returns {string|null}
 	 */
-	public static getUrlParam(param: string, url: string): string;
+	export function getUrlParam(param: string, url: string): string;
 
 	/**
 	 * Clear all input fields in container
 	 *
 	 * @param {any} eContainer
 	 */
-	public static clearFields(eContainer: any): void;
+	export function clearFields(eContainer: any): void;
 
 	/**
 	 * Set Field value
@@ -103,7 +103,7 @@ declare class EgoUtil {
 	 * @param {any} eField
 	 * @param {any} value
 	 */
-	public static setFieldValue(eField: any, value: any): void;
+	export function setFieldValue(eField: any, value: any): void;
 
 	/**
 	 * Set listener. Add listener to array
@@ -112,7 +112,7 @@ declare class EgoUtil {
 	 * @param {Function} listener - Listener
 	 * @returns {boolean}
 	 */
-	public static setListener(arr, listener): boolean;
+	export function setListener(arr, listener): boolean;
 
 	/**
 	 * Remove listener from array.
@@ -121,7 +121,7 @@ declare class EgoUtil {
 	 * @param {Function} listener - Listener
 	 * @returns {boolean}
 	 */
-	public static removeListener(arr, listener): boolean;
+	export function removeListener(arr, listener): boolean;
 
 	/**
 	 * Traversing an array of listeners. Call `handler` for each listener and pass it.
@@ -130,7 +130,7 @@ declare class EgoUtil {
 	 * @param {Function} handler - Handler for each listener
 	 * @returns {boolean}
 	 */
-	public static eachListener(arr, handler): boolean;
+	export function eachListener(arr, handler): boolean;
 
 	/**
 	 * Pad a string to a certain length with another string
@@ -140,7 +140,7 @@ declare class EgoUtil {
 	 * @param pad_string
 	 * @param pad_type
 	 */
-	public static str_pad(input: string, pad_length: number, pad_string?: string, pad_type?: string): string;
+	export function str_pad(input: string, pad_length: number, pad_string?: string, pad_type?: string): string;
 
 	/**
 	 * Retrieve item from array by path
@@ -149,6 +149,9 @@ declare class EgoUtil {
 	 * @param path - Path for search.
 	 * @param _default - Default value.
 	 */
-	public static getArrItem(obj: any, path: string, _default?: any): any;
+	export function getArrItem(obj: any, path: string, _default?: any): any;
+
 
 }
+
+export = EgoUtil;
