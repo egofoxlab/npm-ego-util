@@ -448,8 +448,14 @@
 	 * @returns {*}
 	 */
 	EgoUtil.getArrItem = function (obj, path, _default) {
+		//	Check default value
 		if (!_default) {
 			_default = null;
+		}
+
+		//	Check empty object
+		if (EgoUtil.empty(obj)) {
+			return _default;
 		}
 
 		if (path.split('.').length > 1) {
