@@ -10,7 +10,7 @@
  * @constructor
  */
 
-(function (global, factory) {
+/*(function (global, factory) {
 	if (typeof exports === 'object' && typeof module !== 'undefined') {
 		module.exports = factory()
 	} else if (typeof define === 'function' && define.amd) {
@@ -18,7 +18,23 @@
 	} else {
 		global.EgoUtil = factory()
 	}
-} (this, (function () {
+} (this, (function () {*/
+(function (global, factory) {
+	if (typeof module === "object" && typeof module.exports === "object") {
+		module.exports = global.document ?
+			factory(global, true) :
+			function (w) {
+				if (!w.document) {
+					throw new Error("EgoUtil requires a window with a document");
+				}
+				return factory(w);
+			};
+	} else {
+		factory(global);
+	}
+
+	// Pass this if window is not defined yet
+})(typeof window !== "undefined" ? window : this, function (window, noGlobal) {
 	function EgoUtil() {
 
 	}
@@ -493,5 +509,11 @@
 			: subString) + "&hellip;";
 	};*/
 
+	if (!noGlobal) {
+		//window.EgoUtil = EgoUtil;
+	}
+
+	window.EgoUtil = EgoUtil;
+
 	return EgoUtil;
-})));
+});
