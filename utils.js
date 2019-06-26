@@ -478,7 +478,7 @@
 			var tmp = obj;
 
 			path.split('.').some(function (item) {
-				if (tmp === undefined || tmp === null || isNaN(tmp) || !tmp.hasOwnProperty(item)) {
+				if (tmp === undefined || tmp === null || !tmp.hasOwnProperty(item)) {
 					tmp = _default;
 
 					return true;
